@@ -33,45 +33,47 @@ export default function CategoryForm({
   };
 
   return (
-    <div className='space-y-4 bg-white p-4 rounded-lg shadow absolute'>
-      <form onSubmit={handleSubmit} className='space-y-2'>
-        <Input
-          placeholder='Ime Kategorije'
-          value={newCategoryName}
-          onChange={(e) => setNewCategoryName(e.target.value)}
-          required
-        />
-        <Button type='submit'>{editingCategory ? 'Spremi' : 'Dodaj'}</Button>
-      </form>
-      <ul className='space-y-2'>
-        {categories.map((category) => (
-          <li key={category.id} className='flex items-center justify-between'>
-            <span>{category.name}</span>
-            <div className='space-x-2'>
-              <Button
-                size='sm'
-                variant='outline'
-                onClick={() => {
-                  setEditingCategory(category);
-                  setNewCategoryName(category.name);
-                }}
-              >
-                Uredi
-              </Button>
-              <Button
-                size='sm'
-                variant='destructive'
-                onClick={() => onDelete(category.id)}
-              >
-                Obriši
-              </Button>
-            </div>
-          </li>
-        ))}
-      </ul>
-      <Button variant='outline' onClick={onCancel}>
-        Zatvori
-      </Button>
+    <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center'>
+      <div className='space-y-4 bg-white p-4 rounded-lg shadow absolute'>
+        <form onSubmit={handleSubmit} className='space-y-2'>
+          <Input
+            placeholder='Naziv Kategorije'
+            value={newCategoryName}
+            onChange={(e) => setNewCategoryName(e.target.value)}
+            required
+          />
+          <Button type='submit'>{editingCategory ? 'Spremi' : 'Dodaj'}</Button>
+        </form>
+        <ul className='space-y-2'>
+          {categories.map((category) => (
+            <li key={category.id} className='flex items-center justify-between'>
+              <span>{category.name}</span>
+              <div className='space-x-2'>
+                <Button
+                  size='sm'
+                  variant='outline'
+                  onClick={() => {
+                    setEditingCategory(category);
+                    setNewCategoryName(category.name);
+                  }}
+                >
+                  Uredi
+                </Button>
+                <Button
+                  size='sm'
+                  variant='destructive'
+                  onClick={() => onDelete(category.id)}
+                >
+                  Obriši
+                </Button>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <Button variant='outline' onClick={onCancel}>
+          Zatvori
+        </Button>
+      </div>
     </div>
   );
 }

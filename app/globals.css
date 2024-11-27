@@ -2,8 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Lobster';
+  src: url('../app/fonts/Lobster-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mansalva';
+  src: url('../app/fonts/Mansalva-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(
+    to left bottom,
+    #f0fdfa,
+    #dcfcf5,
+    #c7faef,
+    #b1f8ea,
+    #99f6e4
+  );
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100vh;
+}
+
+/* Logo-4 */
+.logo-4 h3 {
+  color: #0d9488;
+  font-weight: 300;
+  font-size: 50px;
+  line-height: 0.65;
+  font-family: 'Lobster', cursive;
+}
+.logo-4 p {
+  font-size: 14px;
+  margin-left: 50px;
+  color: #545454;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-style: italic;
+  font-family: 'Mansalva', cursive;
 }
 
 @layer base {

@@ -35,22 +35,32 @@ export default function TaskForm({
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className='absolute space-y-4 bg-white p-4 rounded-lg shadow'
-    >
-      <Input
-        placeholder='Ime Zadatka'
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        required
-      />
-      <div className='space-x-2'>
-        <Button type='submit'>{task ? 'Uredi' : 'Dodaj'}</Button>
-        <Button type='button' variant='outline' onClick={onCancel}>
-          Zatvori
-        </Button>
-      </div>
-    </form>
+    <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center'>
+      <form
+        onSubmit={handleSubmit}
+        className='relative space-y-4 bg-white p-4 rounded-lg shadow'
+      >
+        <img
+          src='/siluette.png'
+          alt='Siluette'
+          width={150}
+          height={150}
+          className='absolute -top-full left-1/2 -translate-x-1/2 -z-10 opacity-75'
+        />
+
+        <Input
+          placeholder='Šta ti treba živote moj?'
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          required
+        />
+        <div className='space-x-2'>
+          <Button type='submit'>{task ? 'Uredi' : 'Dodaj'}</Button>
+          <Button type='button' variant='outline' onClick={onCancel}>
+            Zatvori
+          </Button>
+        </div>
+      </form>
+    </div>
   );
 }

@@ -26,7 +26,10 @@ export function Sidebar({
         <Button
           variant={selectedCategory === null ? 'secondary' : 'ghost'}
           className='w-full justify-start'
-          onClick={() => onSelectCategory(null)}
+          onClick={() => {
+            onSelectCategory(null);
+            setIsOpen(false);
+          }}
         >
           Sve Kategorije
         </Button>
@@ -51,8 +54,12 @@ export function Sidebar({
     <>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
-          <Button variant='outline' size='icon' className='md:hidden'>
-            <Menu className='h-4 w-4' />
+          <Button
+            variant='outline'
+            size='icon'
+            className='md:hidden bg-teal-50 border-2 border-teal-200'
+          >
+            <Menu className='h-4 w-4 text-teal-500' />
           </Button>
         </SheetTrigger>
         <SheetContent side='left' className='w-[240px] sm:w-[300px]'>

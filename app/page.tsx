@@ -95,8 +95,14 @@ export default function MechanicTaskManager() {
     : null;
 
   return (
-    <div className='container flex gap-3 flex-col mx-auto p-4 '>
-      <h1 className='text-2xl font-bold mb-4 text-center'>SAMO ZA DZANKICU</h1>
+    <div className='container flex gap-3 flex-col mx-auto p-4 h-screen overflow-scroll'>
+      <div className='logo-holder logo-4 self-center'>
+        <a href=''>
+          <h3>Džana</h3>
+          <p>ljubav mog života</p>
+        </a>
+      </div>
+
       <div className='flex justify-between flex-wrap'>
         <Sidebar
           categories={categories}
@@ -108,10 +114,36 @@ export default function MechanicTaskManager() {
             onClick={() => setIsTaskFormOpen(true)}
             disabled={!selectedCategory}
           >
-            Dodaj Zadatak
+            <svg
+              width='24'
+              height='24'
+              fill='none'
+              stroke='currentColor'
+              stroke-width='2'
+              viewBox='0 0 24 24'
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <path d='M7.75 3.5C5.127 3.5 3 5.76 3 8.547 3 14.125 12 20.5 12 20.5s9-6.375 9-11.953C21 5.094 18.873 3.5 16.25 3.5c-1.86 0-3.47 1.136-4.25 2.79-.78-1.654-2.39-2.79-4.25-2.79M10 12h4m-2-2v4' />
+            </svg>
+            Dodaj
           </Button>
           <Button onClick={() => setIsCategoryFormOpen(true)}>
-            Upravljaj Kategorijama
+            <svg
+              width='24'
+              height='24'
+              fill='none'
+              stroke='currentColor'
+              stroke-width='2'
+              viewBox='0 0 24 24'
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <path d='M3 6a2 2 0 0 1 2-2h1.745a2 2 0 0 1 1.322.5l2.272 2a2 2 0 0 0 1.322.5H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm7 7.25h4m-2-2v4' />
+            </svg>
+            Kategorije
           </Button>
         </div>
       </div>

@@ -18,11 +18,11 @@ export default function TaskList({
   onDelete,
 }: TaskListProps) {
   return (
-    <ul className='space-y-4 w-screen px-3'>
+    <ul className='space-y-2 w-screen px-3'>
       {tasks.map((task) => (
         <li
           key={task.id}
-          className='flex items-center justify-between p-4 bg-white shadow rounded-lg'
+          className='flex items-center justify-between p-4 bg-teal-50 shadow rounded-lg'
         >
           <div className='flex items-center space-x-2'>
             <Checkbox
@@ -30,8 +30,8 @@ export default function TaskList({
               onCheckedChange={() => onToggleStatus(task.id)}
             />
             <div>
-              <h3 className='font-semibold'>{task.title}</h3>
-              <p className='text-sm text-blue-500'>
+              <h3 className='font-semibold text-teal-950'>{task.title}</h3>
+              <p className='text-sm text-teal-700'>
                 {category?.id === task.categoryId && category?.name}
               </p>
             </div>
